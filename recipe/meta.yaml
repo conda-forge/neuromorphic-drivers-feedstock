@@ -1,5 +1,5 @@
 {% set name = "neuromorphic-drivers" %}
-{% set version = "0.10.1" %}
+{% set version = "0.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/neuromorphic_drivers-{{ version }}.tar.gz
-  sha256: 8cb16d8aaf80290eb53a95dadb86ca304b86a34e3b4ba5b57c1c7fca6d2a9fa8
+  sha256: 241f5690328fdae21eb2ba32d984a66fe1509670c5b6686e5901cb47001129be
 
 build:
   entry_points:
@@ -16,7 +16,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
-  number: 2
+  number: 0
   skip: true  # [win]
 
 requirements:
