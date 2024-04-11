@@ -1,5 +1,5 @@
 {% set name = "neuromorphic-drivers" %}
-{% set version = "0.11.0" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/neuromorphic_drivers-{{ version }}.tar.gz
-  sha256: 241f5690328fdae21eb2ba32d984a66fe1509670c5b6686e5901cb47001129be
+  sha256: 60c064ed4f54a78a80ffe3b6ba403144ee93dced8aa106502b0d896737636d19
 
 build:
   entry_points:
