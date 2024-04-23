@@ -15,7 +15,7 @@ build:
     - ndls = neuromorphic_drivers:print_device_list
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - RUST_BACKTRACE=1 {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+    - RUST_BACKTRACE=1 {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --no-build-isolation
   number: 0
   skip: true  # [win]
 
