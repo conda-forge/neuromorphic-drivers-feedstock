@@ -1,5 +1,5 @@
 {% set name = "neuromorphic-drivers" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/neuromorphic_drivers-{{ version }}.tar.gz
-  sha256: 60c064ed4f54a78a80ffe3b6ba403144ee93dced8aa106502b0d896737636d19
+  sha256: d980142990b60cf03a2f5669ebb8d20e2c7c71b5b1eaead6e5e3a309a0dc342d
 
 build:
   entry_points:
@@ -22,6 +22,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
