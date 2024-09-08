@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/neuromorphic_drivers-{{ version }}.tar.gz
   sha256: 0017ed5716d2deed7f2bbd2832bab715fbb0dffa4fee53fd407ebb21726bc31d
+  patches:
+    - 2.patch
 
 build:
   entry_points:
