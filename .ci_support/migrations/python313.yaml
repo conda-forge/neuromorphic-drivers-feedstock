@@ -39,6 +39,6 @@ channel_sources:
 - conda-forge/label/python_rc,conda-forge
 # additional entries to add for zip_keys
 numpy:
-- 2
+- 2.0
 python_impl:
 - cpython
