@@ -23,3 +23,15 @@ index 8e8ccb4..92ebbad 100644
  
  [build-dependencies]
  cc = "1.0"
+diff --git a/python/src/lib.rs b/python/src/lib.rs
+index 76b7bd5..2b1b0e5 100644
+--- a/python/src/lib.rs
++++ b/python/src/lib.rs
+@@ -4,6 +4,7 @@ mod structured_array;
+ extern crate neuromorphic_drivers as neuromorphic_drivers_rs;
+ use pyo3::IntoPy;
+ use std::ops::DerefMut;
++use pyo3::types::PyModuleMethods;
+ 
+ type ListedDevice = (String, String, Option<String>, Option<String>);
+ 
