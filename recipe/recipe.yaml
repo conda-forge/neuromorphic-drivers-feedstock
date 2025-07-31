@@ -1,6 +1,6 @@
 context:
   name: neuromorphic-drivers
-  version: 0.13.3
+  version: "0.15.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/neuromorphic_drivers-${{ version }}.tar.gz
-  sha256: 0017ed5716d2deed7f2bbd2832bab715fbb0dffa4fee53fd407ebb21726bc31d
+  sha256: be5af2982b996e4337d877e3cd0f572f4057f566506d26fbbc59fdc42aa05d4d
   patches:
     - 2.patch
 
 build:
-  number: 2
+  number: 0
   skip: win
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
