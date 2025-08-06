@@ -1,6 +1,6 @@
 context:
   name: neuromorphic-drivers
-  version: "0.15.0"
+  version: "0.16.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/neuromorphic_drivers-${{ version }}.tar.gz
-  sha256: be5af2982b996e4337d877e3cd0f572f4057f566506d26fbbc59fdc42aa05d4d
+  sha256: dc2e29a07117ab6748638ea049e58465c9457d038c96d8d47cd4be31e1a8014c
 
 build:
   number: 0
