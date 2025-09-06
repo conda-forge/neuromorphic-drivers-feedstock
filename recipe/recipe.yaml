@@ -11,7 +11,7 @@ source:
   sha256: dc2e29a07117ab6748638ea049e58465c9457d038c96d8d47cd4be31e1a8014c
 
 build:
-  number: 0
+  number: 1
   skip: win
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
