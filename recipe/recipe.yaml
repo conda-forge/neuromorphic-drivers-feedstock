@@ -7,12 +7,11 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/neuromorphic_drivers-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/neuromorphic_drivers-${{ version }}.tar.gz
   sha256: a4fd6f8166909d261f770d3cd3130d4a66ccb2b1d8cc9d548bccf82ec5db486b
 
 build:
-  number: 0
-  skip: win
+  number: 1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
@@ -62,3 +61,4 @@ about:
 extra:
   recipe-maintainers:
     - Tobias-Fischer
+    - AdamDHines
