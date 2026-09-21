@@ -1,0 +1,21 @@
+Fix the output path of the build script's generated Python sources.
+
+build.rs resolves `python/neuromorphic_drivers/generated` relative to the
+crate directory (`python/`), so it only worked because sdists up to 0.17.0
+shipped a redundant nested `python/python/neuromorphic_drivers` tree. That
+copy is gone in 0.18.1, so `std::fs::create_dir` panics with NotFound.
+Point the path at the python-source package directory instead.
+
+Reported upstream: https://github.com/neuromorphicsystems/neuromorphic-rs
+
+--- a/python/build.rs
++++ b/python/build.rs
+@@ -409,7 +409,7 @@
+ 
+ macro_rules! generate {
+     ($(($module:ident, $packet:ident)),+) => {
+-        let python_generated_directory = std::path::Path::new("python/neuromorphic_drivers/generated");
++        let python_generated_directory = std::path::Path::new("neuromorphic_drivers/generated");
+         let _ = std::fs::remove_dir_all(python_generated_directory);
+         std::fs::create_dir(python_generated_directory).unwrap();
+         let devices_directory = python_generated_directory.join("devices");
