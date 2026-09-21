@@ -1,6 +1,6 @@
 context:
   name: neuromorphic-drivers
-  version: "0.17.0"
+  version: "0.18.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,10 +8,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/neuromorphic_drivers-${{ version }}.tar.gz
-  sha256: a4fd6f8166909d261f770d3cd3130d4a66ccb2b1d8cc9d548bccf82ec5db486b
+  sha256: e3846005a6c0537669b553200f691d378e5b3cfd332c903e96eb298b8e67c6b4
+  patches:
+    - patches/0001-fix-generated-python-output-path.patch
+    - patches/0002-relax-maturin-build-requirement.patch
 
 build:
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv

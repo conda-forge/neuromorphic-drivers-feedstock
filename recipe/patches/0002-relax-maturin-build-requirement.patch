@@ -1,0 +1,20 @@
+Relax the exact maturin build requirement.
+
+Upstream pins `maturin==1.15.0` in `[build-system] requires`. pip validates
+build requirements even with build isolation disabled, so the conda-forge
+build breaks as soon as conda-forge ships any other maturin. The recipe's
+own `maturin >=1.2.3,<2` host requirement keeps the bound meaningful.
+
+Submitted upstream: https://github.com/neuromorphicsystems/neuromorphic-drivers/pull/14
+
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -17,7 +17,7 @@
+ documentation = "https://github.com/neuromorphicsystems/neuromorphic-rs/"
+ 
+ [build-system]
+-requires = ["maturin==1.15.0", "numpy>=1.26"]
++requires = ["maturin>=1.2.3,<2", "numpy>=1.26"]
+ build-backend = "maturin"
+ 
+ [tool.maturin]
