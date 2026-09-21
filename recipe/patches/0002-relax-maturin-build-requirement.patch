@@ -5,7 +5,7 @@ build requirements even with build isolation disabled, so the conda-forge
 build breaks as soon as conda-forge ships any other maturin. The recipe's
 own `maturin >=1.2.3,<2` host requirement keeps the bound meaningful.
 
-Reported upstream: https://github.com/neuromorphicsystems/neuromorphic-rs
+Submitted upstream: https://github.com/neuromorphicsystems/neuromorphic-drivers/pull/14
 
 --- a/pyproject.toml
 +++ b/pyproject.toml
