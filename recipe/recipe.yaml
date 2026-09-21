@@ -14,7 +14,7 @@ source:
     - patches/0002-relax-maturin-build-requirement.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
