@@ -9,9 +9,6 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/neuromorphic_drivers-${{ version }}.tar.gz
   sha256: 03656099bc07df05c4acb00059099e3111db95b0f392c64b0e8400fbe22f6231
-  patches:
-    - patches/0001-fix-generated-python-output-path.patch
-    - patches/0002-relax-maturin-build-requirement.patch
 
 build:
   number: 0
