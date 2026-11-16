@@ -1,6 +1,6 @@
 context:
   name: neuromorphic-drivers
-  version: "0.18.2"
+  version: "0.19.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/neuromorphic_drivers-${{ version }}.tar.gz
-  sha256: 03656099bc07df05c4acb00059099e3111db95b0f392c64b0e8400fbe22f6231
+  sha256: 48793320db3dc1e4ae8d73ac699350392b35ffb9fe6dcacd7e0bc15014dac8e6
 
 build:
   number: 0
